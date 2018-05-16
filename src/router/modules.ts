@@ -1,5 +1,5 @@
 
-const Dashboard = () => import(/* webpackChunkName: "Dashboard" */ '@/view/Dashboard')
+const Dashboard = () => import(/* webpackChunkName: "Dashboard" */ '@/view/Dashboard.vue')
 
 export default [
   {

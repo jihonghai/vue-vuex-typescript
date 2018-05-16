@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router, { Route } from 'vue-router'
 import modules from './modules'
 
 if (process.env.NODE_ENV === 'development') {
@@ -10,7 +10,7 @@ const CommonView = () => import(/* webpackChunkName: "CommonView" */ '@/view/Com
 const Login = () => import('@/view/auth/Login.vue')
 const Page404 = () => import('@/view/404.vue')
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/login',
@@ -32,3 +32,9 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to: Route, from: Route, next: any) => {
+  next()
+})
+
+export default router

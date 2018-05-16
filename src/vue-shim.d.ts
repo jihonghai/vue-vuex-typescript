@@ -9,3 +9,9 @@ declare module 'vue/types/vue' {
     $Modal: any
   }
 }
+
+declare var process : {
+  env: {
+      NODE_ENV: string
+  }
+}
