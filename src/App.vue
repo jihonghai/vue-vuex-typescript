@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -13,10 +13,10 @@ export default class App extends Vue {
 }
 </script>
 
-<style src="@/assets/css/style.css"></style>
 <style src="@/assets/css/bootstrap-reset.css"></style>
 <style src="@/assets/css/element-reset.less" lang="less"></style>
-<style src="@/assets/css/flex.css"></style>
+<style src="@/assets/css/flex.less" lang="less"></style>
+<style src="@/assets/css/style.css"></style>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

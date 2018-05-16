@@ -1,16 +1,18 @@
+@import './theme.less';
+
 .el-button--default {
-    color: #FFFFFF;
-    background-color: #bec3c7;
-    border-color: #bec3c7;
+    color: @default-color;
+    background-color: @default-background-color;
+    border-color: @default-border-color;
     &:focus, &:hover {
-        color: #FFFFFF;
-        border-color: #b0b5b9;
-        background-color: #b0b5b9
+        color: @default-hover-color;
+        border-color: @default-hover-border-color;
+        background-color: @default-hover-background-color;
     }
 }
 
 .el-button--primary {
-    background-color: #41cac0;
-    border-color: #41cac0;
-    color: #FFFFFF;
+    background-color: @primary-background-color;
+    border-color: @primary-border-color;
+    color: @primary-color;
 }
