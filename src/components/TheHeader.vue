@@ -1,7 +1,7 @@
 <template>
   <header class="header white-bg">
     <div class="sidebar-toggle-box">
-      <el-tooltip class="item" effect="dark" content="切换导航" placement="right">
+      <el-tooltip effect="dark" content="切换导航" placement="right">
         <i class="fas fa-bars" @click="toggleMenu()"></i>
       </el-tooltip>
     </div>
@@ -9,38 +9,46 @@
     <a href="#" class="logo">管理平台</a>
     <!--logo end-->
     <div class="top-nav pull-right">
-      <!--search & user info start-->
-      <ul class="nav pull-right top-menu">
-        <el-dropdown>
-          <el-button type="primary">
-            更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
-          </el-button>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>黄金糕</el-dropdown-item>
-            <el-dropdown-item>狮子头</el-dropdown-item>
-            <el-dropdown-item>螺蛳粉</el-dropdown-item>
-            <el-dropdown-item>双皮奶</el-dropdown-item>
-            <el-dropdown-item>蚵仔煎</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
-      </ul>
-      <!--search & user info end-->
+    <!--search & user info start-->
+    <div class="nav pull-right top-menu">
+      <el-dropdown>
+        <el-button type="primary">
+          更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
+        </el-button>
+        <el-dropdown-menu slot="dropdown" class="user-dropdown">
+          <el-dropdown-item>黄金糕</el-dropdown-item>
+          <el-dropdown-item>狮子头</el-dropdown-item>
+          <el-dropdown-item>螺蛳粉</el-dropdown-item>
+          <el-dropdown-item>双皮奶</el-dropdown-item>
+          <el-dropdown-item divided>
+            <span @click="logout">退出</span>
+          </el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
+    <!--search & user info end-->
     </div>
   </header>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import { Action } from 'vuex-class'
+import VueRouter from 'vue-router'
 
-@Component
+@Component({
+  name: 'TheHeader'
+})
 export default class TheHeader extends Vue {
   @Action('changeSideBarState') changeStateAction: Function
+
+  $router: VueRouter
 
   toggleMenu () {
     this.changeStateAction()
   }
 
-  logOut () {
+  logout () {
+    this.$router.replace('/login')
   }
 
   showUserInfo () {

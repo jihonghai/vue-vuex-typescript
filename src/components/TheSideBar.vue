@@ -1,5 +1,8 @@
 <template>
-  <el-menu default-active="1-4-1" class="el-menu-vertical" :collapse="isCollapse"
+  <el-menu default-active="/404"
+    class="el-menu-vertical"
+    :collapse="isCollapse"
+    :router="true"
     :unique-opened="true">
     <el-submenu index="1">
       <template slot="title">
@@ -8,7 +11,7 @@
       </template>
       <el-menu-item-group>
         <span slot="title">分组一</span>
-        <el-menu-item index="1-1">选项1</el-menu-item>
+        <el-menu-item index="/404">选项1</el-menu-item>
         <el-menu-item index="1-2">选项2</el-menu-item>
       </el-menu-item-group>
       <el-menu-item-group title="分组2">
