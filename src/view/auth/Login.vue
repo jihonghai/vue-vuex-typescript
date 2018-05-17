@@ -54,7 +54,7 @@ export default class Login extends Vue {
 
   $router: VueRouter
 
-  @Getter('isLoggedIn') isLoggedIn: boolean
+  @Getter('isLoggedIn') isLoggedIn: boolean = false
 
   @Action('login') loginAction: Function
 

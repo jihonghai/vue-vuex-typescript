@@ -9,7 +9,7 @@ import { Getter } from 'vuex-class'
 
 @Component({})
 export default class Dashboard extends Vue {
-  @Getter('isLoggedIn') isLoggedIn: boolean
+  @Getter('isLoggedIn') isLoggedIn: boolean = false
 }
 </script>
 

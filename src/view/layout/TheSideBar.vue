@@ -1,9 +1,11 @@
 <template>
-  <el-menu default-active="/404"
+  <el-menu
     class="el-menu-vertical"
     :collapse="isCollapse"
+    active-text-color="#27BAFE"
     :router="true"
     :unique-opened="true">
+    <!--
     <el-submenu index="1">
       <template slot="title">
         <i class="el-icon-location"></i>
@@ -44,15 +46,51 @@
       <i class="el-icon-setting"></i>
       <span slot="title">导航四</span>
     </el-menu-item>
+    -->
+    <template v-for="item in routes" v-if="!item.hidden && item.children">
+      <router-link v-if="item.children.length === 1 && !item.children[0].children && !item.alwaysShow" :to="item.path+'/'+item.children[0].path" :key="item.children[0].name">
+        <el-menu-item :index="item.path + '/' + item.children[0].path" :class="{'submenu-title-noDropdown': !isNest}">
+          <span v-if="item.children[0].meta && item.children[0].meta.title">{{item.children[0].meta.title}}</span>
+        </el-menu-item>
+      </router-link>
+
+      <el-submenu v-else :index="item.name || item.path" :key="item.name">
+        <template slot="title">
+          <span v-if="item.meta && item.meta.icon" :class="item.meta.icon" class="iconfont menuicon"></span>
+          <span v-if="item.meta && item.meta.title">{{item.meta.title}}</span>
+        </template>
+
+        <template v-for="child in item.children" v-if="!child.hidden">
+          <sidebar-item :is-nest="true" class="nest-menu" v-if="child.children && child.children.length" :routes="[child]" :key="child.path"></sidebar-item>
+          <router-link v-else :to="item.path + '/' + child.path" :key="child.name">
+            <el-menu-item :index="item.path + '/' + child.path">
+              <svg-icon v-if="child.meta && child.meta.icon" :icon-class="child.meta.icon"></svg-icon>
+              <span v-if="child.meta && child.meta.title">{{child.meta.title}}</span>
+            </el-menu-item>
+          </router-link>
+        </template>
+      </el-submenu>
+    </template>
   </el-menu>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import { Getter } from 'vuex-class'
+import VurRouter from 'vue-router'
 
-@Component
+@Component({
+  name: 'TheSideBar'
+})
 export default class TheSideBar extends Vue {
+  isNest: boolean = false
+
   @Getter isCollapse: boolean
+
+  $router: VurRouter
+
+  get routes () {
+    return this.$router['options'].routes
+  }
 }
 </script>
 <style lang="less">

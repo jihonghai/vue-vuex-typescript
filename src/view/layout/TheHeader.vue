@@ -33,8 +33,9 @@
   </header>
 </template>
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-import { Action } from 'vuex-class'
+import Vue from 'vue'
+import { Component } from 'vue-property-decorator'
+import { Action, Mutation } from 'vuex-class'
 import VueRouter from 'vue-router'
 
 @Component({
@@ -42,6 +43,7 @@ import VueRouter from 'vue-router'
 })
 export default class TheHeader extends Vue {
   @Action('changeSideBarState') changeStateAction: Function
+  @Mutation('LOGOUT') logoutMutation: Function
 
   $router: VueRouter
 
@@ -50,6 +52,7 @@ export default class TheHeader extends Vue {
   }
 
   logout () {
+    this.logoutMutation()
     this.$router.replace('/login')
   }
 
