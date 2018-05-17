@@ -13,7 +13,6 @@ export default class App extends Vue {
 }
 </script>
 
-<style src="@/assets/css/bootstrap-reset.css"></style>
 <style src="@/assets/css/element-reset.less" lang="less"></style>
 <style src="@/assets/css/flex.less" lang="less"></style>
 <style src="@/assets/css/style.css"></style>

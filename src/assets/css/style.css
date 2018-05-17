@@ -13,19 +13,30 @@ body {
     height: 100%;
 }
 
+a:active, a:hover {
+  outline:0
+}
+
+a {
+  text-decoration:none
+}
+a:focus, a:hover {
+  text-decoration:underline
+}
+a:focus {
+  outline:5px auto -webkit-focus-ring-color;
+  outline-offset:-2px
+}
+
 /*--sidebar toggle---*/
 
 .sidebar-toggle-box {
-    float: left;
     padding-right: 15px;
-    margin-top: 20px;
 }
 
 a.logo {
     font-size: 21px;
     color: #2e2e2e;
-    float: left;
-    margin-top: 15px;
     text-transform: uppercase;
 }
 
@@ -67,7 +78,6 @@ a.logo:focus {
 }
 
 .top-nav {
-    margin-top: 7px;
 }
 
 /*404 page*/
