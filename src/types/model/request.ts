@@ -6,3 +6,7 @@ export interface LoginRequest extends Request {
   userPwd: string
   code?: string
 }
+
+export interface UserRequest extends Request {
+
+}

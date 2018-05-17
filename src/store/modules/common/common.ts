@@ -1,7 +1,7 @@
 import { ActionContext, ActionTree, MutationTree } from 'vuex'
 import * as types from '@/store/mutation-types'
-import { RootState } from '@/store/state'
-import { CommonState } from './commonState'
+import { RootState, CommonState } from '@/store/state'
+// import { CommonState } from './commonState'
 
 type CommonContext = ActionContext<CommonState, RootState>
 

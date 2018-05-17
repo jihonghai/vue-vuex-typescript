@@ -1,16 +1,9 @@
 import { login } from './login'
 import { common } from './common'
-
-export interface ModuleState {
-}
-
-export interface Response {
-}
-
-export interface Request {
-}
+import { user } from './user'
 
 export default {
+  common,
   login,
-  common
+  user
 }

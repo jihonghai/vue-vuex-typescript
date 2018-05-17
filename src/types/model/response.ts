@@ -6,3 +6,7 @@ export interface Response {
 
 export interface LoginResponse extends Response {
 }
+
+export interface UserResponse extends Response {
+  user?: object
+}
