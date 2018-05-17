@@ -2,12 +2,15 @@ import { ActionContext, ActionTree, MutationTree } from 'vuex'
 import * as API from '@/api'
 import * as types from '@/store/mutation-types'
 import { RootState, LoginState } from '@/store/state'
-import { LoginRequest, LoginResponse } from '@/types'
+import { LoginRequest, LoginResponse, User } from '@/types'
 
 type LoginContext = ActionContext<LoginState, RootState>
 
 const state: LoginState = {
+  userId: '',
   userName: '',
+  loginName: '',
+  permissions: [],
   isLoggedIn: false
 }
 
@@ -17,7 +20,7 @@ const getters = {
 }
 
 const mutations: MutationTree<LoginState> = {
-  [types.LOGIN] (state: LoginState) {
+  [types.LOGIN] (state: LoginState, user: User) {
     state.userName = 'Alex'
     state.isLoggedIn = !state.isLoggedIn
   },

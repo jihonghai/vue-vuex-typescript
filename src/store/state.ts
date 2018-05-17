@@ -1,7 +1,3 @@
-// import { CommonState } from './modules/common'
-// import { LoginState } from './modules/login/loginState'
-// import { UserState } from './modules/user/userState'
-
 import { User } from '@/types'
 
 export interface ModuleState {
@@ -12,7 +8,10 @@ export interface CommonState extends ModuleState {
 }
 
 export interface LoginState extends ModuleState {
+  userId: string,
   userName: string,
+  loginName: string,
+  permissions: object[],
   isLoggedIn: boolean
 }
 
