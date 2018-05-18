@@ -6,6 +6,12 @@
     "node_modules"
   ],
   "compilerOptions": {
+    "typeRoots": [
+      // add path to @types
+      "node_modules/@types",
+      "node_modules/vue/types",
+      "node_modules/element-ui/types"
+    ],
     "lib": [
       "dom",
       "es5",

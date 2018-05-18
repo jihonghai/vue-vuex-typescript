@@ -11,7 +11,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import { Route } from 'vue-router'
 import { Watch } from 'vue-property-decorator'
 
 @Component({
@@ -24,8 +23,6 @@ export default class Breadcrumb extends Vue {
   changeRoute () {
     this.getBreadcrumb()
   }
-
-  $route: Route
 
   created () {
     this.getBreadcrumb()

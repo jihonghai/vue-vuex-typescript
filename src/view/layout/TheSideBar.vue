@@ -76,7 +76,6 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import { Getter } from 'vuex-class'
-import VurRouter from 'vue-router'
 
 @Component({
   name: 'TheSideBar'
@@ -85,8 +84,6 @@ export default class TheSideBar extends Vue {
   isNest: boolean = false
 
   @Getter isCollapse: boolean
-
-  $router: VurRouter
 
   get routes () {
     return this.$router['options'].routes

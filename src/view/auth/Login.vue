@@ -19,7 +19,6 @@
 import { Vue, Component, Watch } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 import { LoginRequest } from '@/types'
-import VueRouter from 'vue-router'
 
 @Component({
   name: 'login',
@@ -51,8 +50,6 @@ export default class Login extends Vue {
   $refs: {
     loginForm: any
   }
-
-  $router: VueRouter
 
   @Getter('isLoggedIn') isLoggedIn: boolean = false
 
