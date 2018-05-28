@@ -34,7 +34,7 @@ const actions: ActionTree<LoginState, RootState> = {
   login ({ commit, dispatch }: LoginContext, params: LoginRequest) {
     commit(types.LOGIN)
 
-    API.login(params).then((res: LoginResponse) => {
+    API.login(params).then((res: any) => {
       console.log(res)
     })
   }

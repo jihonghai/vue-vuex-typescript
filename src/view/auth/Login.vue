@@ -16,9 +16,12 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Watch } from 'vue-property-decorator'
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import { Watch } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 import { LoginRequest } from '@/types'
+import { Form } from 'element-ui'
 
 @Component({
   name: 'login',
@@ -48,12 +51,12 @@ export default class Login extends Vue {
   }
 
   $refs: {
-    loginForm: any
+    loginForm: Form
   }
 
   @Getter('isLoggedIn') isLoggedIn: boolean = false
 
-  @Action('login') loginAction: Function
+  @Action('login') loginAction: Function = () => { }
 
   // computed
   get loginMsg () {
@@ -61,13 +64,13 @@ export default class Login extends Vue {
   }
 
   @Watch('loginMsg')
-  onChildChanged (val: string, oldVal: string) {
+  onChildChanged (val: string, oldVal: string): void {
     console.log(val)
     console.log(oldVal)
   }
 
   submitForm (): void {
-    this.$refs.loginForm.validate((valid: boolean) => {
+    this.$refs.loginForm.validate((valid: boolean): boolean => {
       if (valid) {
         const { userName, userPwd } = this.loginForm
         const params: LoginRequest = {
@@ -76,6 +79,8 @@ export default class Login extends Vue {
         }
         this.loginAction(params)
         this.$router.replace('/')
+
+        return true
       } else {
         return false
       }

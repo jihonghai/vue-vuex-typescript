@@ -78,6 +78,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@types/axios@^0.14.0":
+  version "0.14.0"
+  resolved "http://registry.npm.taobao.org/@types/axios/download/@types/axios-0.14.0.tgz#ec2300fbe7d7dddd7eb9d3abf87999964cafce46"
+  dependencies:
+    axios "*"
+
 "@types/node@^10.1.1":
   version "10.1.1"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-10.1.1.tgz#ca39d8607fa1fcb146b0530420b93f1dd4802f6c"
@@ -375,7 +381,7 @@ aws4@^1.2.1:
   version "1.7.0"
   resolved "http://registry.npm.taobao.org/aws4/download/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
 
-axios@^0.18.0:
+axios@*, axios@^0.18.0:
   version "0.18.0"
   resolved "http://registry.npm.taobao.org/axios/download/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
   dependencies:
@@ -6331,7 +6337,7 @@ vue-axios@^2.1.1:
   version "2.1.1"
   resolved "http://registry.npm.taobao.org/vue-axios/download/vue-axios-2.1.1.tgz#6167f2db93065d9bcfc90e65d063ccf34f8b1d63"
 
-vue-class-component@^6.0.0:
+vue-class-component@^6.0.0, vue-class-component@^6.2.0:
   version "6.2.0"
   resolved "http://registry.npm.taobao.org/vue-class-component/download/vue-class-component-6.2.0.tgz#7adb1daa9a868c75f30f97f33f4f1b94aee62089"
 

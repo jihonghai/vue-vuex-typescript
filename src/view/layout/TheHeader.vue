@@ -41,8 +41,8 @@ import { Action, Mutation } from 'vuex-class'
   name: 'TheHeader'
 })
 export default class TheHeader extends Vue {
-  @Action('changeSideBarState') changeStateAction: Function
-  @Mutation('LOGOUT') logoutMutation: Function
+  @Action('changeSideBarState') changeStateAction: Function = () => {}
+  @Mutation('LOGOUT') logoutMutation: Function = () => {}
 
   toggleMenu () {
     this.changeStateAction()

@@ -10,7 +10,10 @@
       // add path to @types
       "node_modules/@types",
       "node_modules/vue/types",
-      "node_modules/element-ui/types"
+      "node_modules/vue-router/types",
+      "node_modules/axios/index.d",
+      "node_modules/element-ui/types",
+      "src/types"
     ],
     "lib": [
       "dom",
@@ -22,13 +25,14 @@
     "module": "esnext",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": false,
     "allowJs": true,
     "target": "es5",
     "sourceMap": true,
     "isolatedModules": true,
-    "strictNullChecks": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
     "jsx": "preserve",
     "pretty": true,
     "baseUrl": ".",
