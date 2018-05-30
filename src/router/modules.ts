@@ -71,6 +71,7 @@ const SystemManagement: IRouterConfig = {
 }
 
 const routers: RouteConfig[] = [
+  login,
   dashboard,
   SystemManagement
 ]
