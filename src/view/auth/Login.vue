@@ -54,7 +54,7 @@ export default class Login extends Vue {
     loginForm: Form
   }
 
-  @Getter('isLoggedIn') isLoggedIn: boolean = false
+  @Getter('isLoggedIn') isLoggedIn: boolean
 
   @Action('login') loginAction: Function = () => { }
 
@@ -78,7 +78,7 @@ export default class Login extends Vue {
           userPwd
         }
         this.loginAction(params)
-        this.$router.replace('/')
+        // this.$router.replace('/')
 
         return true
       } else {
